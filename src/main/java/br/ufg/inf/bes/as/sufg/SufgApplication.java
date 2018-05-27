@@ -2,6 +2,7 @@ package br.ufg.inf.bes.as.sufg;
 
 import br.ufg.inf.bes.as.sufg.mocks.*;
 import br.ufg.inf.bes.as.sufg.repositorios.CursoUfgRepository;
+import br.ufg.inf.bes.as.sufg.repositorios.UnidadeAcademicaRepository;
 import br.ufg.inf.bes.as.sufg.repositorios.UsuarioRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,10 +17,14 @@ public class SufgApplication {
     }
 
     @Bean
-    ApplicationRunner init(CursoUfgRepository cursoRepo, UsuarioRepository userRepo) {
+    ApplicationRunner init(CursoUfgRepository cursoRepo, UnidadeAcademicaRepository unidadeRepo,
+                           UsuarioRepository userRepo) {
         return args -> {
                 CursoUfgMock.getCursos().stream().forEach( c -> {
                     cursoRepo.save(c);
+                });
+                UnidadeAcademicaMock.getUnidades().stream().forEach( c -> {
+                    unidadeRepo.save(c);
                 });
                 UsuarioMock.getUsers().stream().forEach( c -> {
                     userRepo.save(c);

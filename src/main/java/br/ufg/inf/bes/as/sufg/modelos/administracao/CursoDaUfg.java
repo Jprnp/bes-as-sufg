@@ -11,9 +11,6 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
 public class CursoDaUfg extends InstanciaAdministrativa {
-    @Id
-    @GeneratedValue
-    private long id;
     private @NonNull NivelCursoUfg nivel;
     private @NonNull Resolucao tipoResolucao;
     private @NonNull long resolucao;

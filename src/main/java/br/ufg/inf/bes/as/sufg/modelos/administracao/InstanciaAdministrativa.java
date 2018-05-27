@@ -6,12 +6,17 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
+@MappedSuperclass
 @Getter @Setter
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
-public class InstanciaAdministrativa {
+public abstract class InstanciaAdministrativa {
+    @Id
+    @GeneratedValue
+    private long id;
     private @NonNull String sigla;
     private @NonNull String nome;
     private @NonNull TipoInstancia tipo;

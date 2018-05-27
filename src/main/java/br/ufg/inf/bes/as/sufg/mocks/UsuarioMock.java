@@ -19,6 +19,7 @@ public class UsuarioMock {
         usr.setCpf("98765432103");
         usr.setEmail("hyagosouzza@gmail.com");
         usr.setSenha("1");
+        usr.setNome("Hyago Souza");
         usr.setGerencia("INF");
         lista.add(usr);
 

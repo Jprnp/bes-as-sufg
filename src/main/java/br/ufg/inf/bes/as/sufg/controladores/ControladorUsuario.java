@@ -23,7 +23,7 @@ public class ControladorUsuario {
         this.repository = repository;
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @PostMapping("/login")
     public Collection<Usuario> Usuarios(@RequestBody String body) {
         JsonObject jsonObject = new JsonParser().parse(body).getAsJsonObject();
