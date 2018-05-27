@@ -1,4 +1,21 @@
 package br.ufg.inf.bes.as.sufg.modelos.administracao;
 
-public class CursoDaUfg {
+import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+@Getter @Setter
+@NoArgsConstructor
+@ToString @EqualsAndHashCode
+public class CursoDaUfg extends InstanciaAdministrativa {
+    @Id
+    @GeneratedValue
+    private long id;
+    private @NonNull NivelCursoUfg nivel;
+    private @NonNull Resolucao tipoResolucao;
+    private @NonNull long resolucao;
+    private @NonNull Turno turno;
 }
