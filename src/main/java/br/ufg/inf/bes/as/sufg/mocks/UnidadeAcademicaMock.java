@@ -22,6 +22,19 @@ public class UnidadeAcademicaMock {
         unidade.setEmail("email@inf.ufg.br");
         unidade.setUrl("inf.ufg.br");
         lista.add(unidade);
+
+        unidade = new UnidadeAcademica();
+        unidade.setTipo(TipoInstancia.UNIDADE);
+        unidade.setNome("Faculdade de Artes Visuais");
+        unidade.setSigla("FAV");
+        /*Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, 2008);
+        cal.set(Calendar.MONTH, Calendar.JUNE);
+        cal.set(Calendar.DAY_OF_MONTH, 27);
+        unidade.setDataCriacao(cal.getTime());*/
+        unidade.setEmail("email@fav.ufg.br");
+        unidade.setUrl("fav.ufg.br");
+        lista.add(unidade);
         return lista;
     }
 }

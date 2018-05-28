@@ -21,7 +21,7 @@ public class Evento {
     private @NonNull String emailSolicitante;
     private @NonNull FormaDivulgacao divulgacao;
     private @NonNull EscopoDivulgacao escopo;
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private AprovacaoDivulgacao aprovacao;
     private @NonNull Date dataExpiracao;
     private long idInstancia;

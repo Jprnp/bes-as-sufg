@@ -3,8 +3,6 @@ package br.ufg.inf.bes.as.sufg.modelos.administracao;
 import lombok.*;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 @Entity
 @Getter @Setter

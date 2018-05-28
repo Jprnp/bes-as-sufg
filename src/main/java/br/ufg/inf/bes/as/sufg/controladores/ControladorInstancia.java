@@ -4,6 +4,7 @@ import br.ufg.inf.bes.as.sufg.modelos.administracao.InstanciaAdministrativa;
 import br.ufg.inf.bes.as.sufg.modelos.administracao.UnidadeAcademica;
 import br.ufg.inf.bes.as.sufg.modelos.usuario.Usuario;
 import br.ufg.inf.bes.as.sufg.repositorios.CursoUfgRepository;
+import br.ufg.inf.bes.as.sufg.repositorios.RegionalRepository;
 import br.ufg.inf.bes.as.sufg.repositorios.UnidadeAcademicaRepository;
 import br.ufg.inf.bes.as.sufg.repositorios.UsuarioRepository;
 import com.google.gson.JsonObject;
@@ -18,10 +19,14 @@ import java.util.stream.Collectors;
 public class ControladorInstancia {
     private CursoUfgRepository cursoRepo;
     private UnidadeAcademicaRepository unidRepo;
+    private RegionalRepository regionalRepo;
 
-    public ControladorInstancia( CursoUfgRepository cRepo, UnidadeAcademicaRepository uRepo ) {
+    public ControladorInstancia(CursoUfgRepository cRepo,
+                                UnidadeAcademicaRepository uRepo,
+                                RegionalRepository rRepo) {
         this.cursoRepo = cRepo;
         this.unidRepo = uRepo;
+        this.regionalRepo = rRepo;
     }
 
     @CrossOrigin(origins = "*")
@@ -30,8 +35,12 @@ public class ControladorInstancia {
         List<InstanciaAdministrativa> listaC = cursoRepo.findAll().stream()
                 .collect(Collectors.toList());
         unidRepo.findAll().stream()
-                .collect(Collectors.toList()).stream().forEach( c -> {
-                    listaC.add(c);
+                .collect(Collectors.toList()).stream().forEach(c -> {
+            listaC.add(c);
+        });
+        regionalRepo.findAll().stream()
+                .collect(Collectors.toList()).stream().forEach(c -> {
+            listaC.add(c);
         });
         return listaC;
     }

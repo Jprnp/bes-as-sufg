@@ -22,7 +22,6 @@ public class ControladorUsuario {
     public ControladorUsuario( UsuarioRepository repository ) {
         this.repository = repository;
     }
-
     @CrossOrigin(origins = "*")
     @PostMapping("/login")
     public Collection<Usuario> Usuarios(@RequestBody String body) {
