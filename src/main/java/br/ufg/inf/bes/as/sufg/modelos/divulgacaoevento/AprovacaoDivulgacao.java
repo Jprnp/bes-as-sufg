@@ -7,17 +7,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
 
-/*@Entity
+@Entity
 @Getter @Setter
 @NoArgsConstructor
-@ToString @EqualsAndHashCode*/
+@ToString @EqualsAndHashCode
 public class AprovacaoDivulgacao {
-    /*
     @Id
     @GeneratedValue
     private long id;
     private @NonNull boolean aprovada;
     private String parecer;
     private Date dataAvaliacao;
-    */
 }

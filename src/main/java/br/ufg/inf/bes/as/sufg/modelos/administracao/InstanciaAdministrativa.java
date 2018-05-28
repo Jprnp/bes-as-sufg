@@ -21,6 +21,7 @@ public abstract class InstanciaAdministrativa {
     private @NonNull String nome;
     private @NonNull TipoInstancia tipo;
     private @NonNull Date dataCriacao;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private  Date dataEncerramento;
     private String email;
     private String url;

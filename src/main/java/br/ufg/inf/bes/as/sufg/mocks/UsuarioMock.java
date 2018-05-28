@@ -13,6 +13,7 @@ public class UsuarioMock {
         usr.setCpf("12345678903");
         usr.setEmail("teste@gmail.com");
         usr.setSenha("123456");
+        usr.setNome("Usuario Teste");
         lista.add(usr);
 
         usr = new Usuario();
